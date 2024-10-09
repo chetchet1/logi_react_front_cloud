@@ -39,7 +39,9 @@ const Mrpdialog = ({ selectedRows, mrpClose, searchMps }: any) => {
     { headerName: '누적손실율', field: 'totalLossRate', width: 100},
     { headerName: '계산수량', field: 'caculatedAmount', width: 100 },
     { headerName: '필요수량', field: 'requiredAmount', width: 100 },
-    { headerName: '단위', field: 'unitOfMrp', width: 100 }
+    { headerName: '단위', field: 'unitOfMrp', width: 100 },
+    { headerName: '원자재 단가', field: 'standardUnitPrice', width: 100 },
+    { headerName: '총 가격', field: 'totalPrice', width: 100 }
   ];
 
   const dispatch = useDispatch();
@@ -61,6 +63,9 @@ const Mrpdialog = ({ selectedRows, mrpClose, searchMps }: any) => {
   }, [state]); 
 
   const registerMrp = () => {
+    // 여기에 콘솔 로그 추가
+    console.log('현재 MRP 시뮬레이터 리스트:', mrpSimulatorList);
+
     try {
       dispatch(postMrpSimulator({date: Date, list: mrpSimulatorList}));
       Swal.fire({

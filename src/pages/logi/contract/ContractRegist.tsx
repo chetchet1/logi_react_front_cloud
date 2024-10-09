@@ -229,6 +229,7 @@ function ContractRegist() {
   };
 
   const handleEstimateRequest = () => {
+    setDateSearchCondition('estimateDate');
     dispatch(getEstimateData({ startDate, endDate, dateSearchCondition }));
   };
 
@@ -299,6 +300,7 @@ function ContractRegist() {
         <MainCard content={false} title="수주 등록">
           <MainCard>
             <Grid
+              item
               xs={12}
               sm={6}
               sx={{

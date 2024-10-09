@@ -71,6 +71,8 @@ export interface OpenMrpTO {
   caculatedAmount: string;
   requiredAmount: number;
   unitOfMrp: string;
+  standardUnitPrice: string; // 원자재 단가
+	totalPrice: string;        // 총 가격
 }
 
 export interface ProductionWorkInstructionTO {
